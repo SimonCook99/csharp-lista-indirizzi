@@ -21,7 +21,7 @@ while (!file.EndOfStream){
         string ZIP = infoAddress[5];
 
         if (infoAddress.Length > 6){
-            infoAddress[0] += infoAddress[1];
+            name = infoAddress[0] + " " +  infoAddress[1];
             surname = infoAddress[2];
             street = infoAddress[3];
             city = infoAddress[4];
@@ -36,8 +36,9 @@ while (!file.EndOfStream){
 
 }
 
+file.Close();
+
 foreach (Indirizzo indirizzo in listaIndirizzi){
     Console.WriteLine($"Nome: {indirizzo.Name} Cognome: {indirizzo.Surname} Via: {indirizzo.Street} Città: {indirizzo.City} Provincia: {indirizzo.Province} Codice postale: {indirizzo.ZIP}");
 }
 
-file.Close();
